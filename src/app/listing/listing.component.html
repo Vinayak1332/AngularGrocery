@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="d-flex mx-2 flex-row bd-highlight mb-3">
+              <!-- Filters -->
+              <div class="p-2 bd-highlight">
+                <label for="Filter" class="px-3"><strong>Filters</strong></label><br>
+                <label for="Brands" class="pt-2"><strong>Brands</strong></label>
+                <!-- First checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input brand" type="checkbox" value="Good Life" id="flexCheckDefault"/>
+                  <label cglass="form-check-label " for="flexCheckDefault">Good Life</label>
+                </div>
+                <!-- Second checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input brand" type="checkbox" value="Saffola" id="flexCheckChecked" />
+                  <label class="form-check-label" for="flexCheckChecked">Saffola</label>
+                </div>
+                <!-- Third checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input brand" type="checkbox" value="Tata" id="flexCheckChecked"/>
+                  <label class="form-check-label" for="flexCheckChecked">Tata</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input brand" type="checkbox" value="Fortune" id="flexCheckChecked"/>
+                  <label class="form-check-label" for="flexCheckChecked">Fortune</label>
+                </div>
+                <!-- Lense checkbox -->
+                <br> 
+                <div class="form-check">
+                  
+                  <button class="btn btn-success" onclick="applyFilters()">Apply Filter</button>
+                </div>
+                </div>
+                </div>
+          </div>
+            <!--display the items-->
+          
+            <div class="col-sm-9 border" id="cars">
+              <div class="row">
+               <div class="card col-sm-4" *ngFor="let card of groceryLists;let i = index;">
+                   <img [src]="card.image" class="card-img-top" alt="...">
+                   <div class="card-body">
+                     <h5 class="card-title">{{card.name}}</h5>
+                     <p class="card-text">{{card.price}}</p>
+                     <button href="#" class="btn btn-success" (click)="Landing(card)">View</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             
+
+        </div>
+      </div>
+</body>
+</html>
